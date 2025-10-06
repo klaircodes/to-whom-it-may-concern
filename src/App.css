@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 #root {
   min-height: 100vh;
   display: flex;
@@ -67,6 +69,60 @@
   border-color: #070719;
 }
 
+
+/* ----------------------------- */
+/* pixel fonts aaaaaa */
+.font-pixel-heading {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  text-rendering: pixelated;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+}
+
+.font-pixel-subheading {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  text-rendering: pixelated;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+}
+
+.font-pixel-paragraph {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  text-rendering: pixelated;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+}
+
+/* ----------------------------- */
+/* simple thick icons */
+.thick-svg {
+  filter: drop-shadow(0.5px 0 0 currentColor) drop-shadow(-0.5px 0 0 currentColor);
+}
+
+.normal-svg {
+  filter: none;
+}
+
+
+/* ----------------------------- */
+/* SVG background for compliment area */
+.compliment-bg {
+  background-image: url('./assets/images/compliment-bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* ----------------------------- */
+
+
 .bg-grid-gradient {
   background-color: #FFFFFF;
   position: relative;
@@ -84,21 +140,23 @@
     repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 19px,
-      #070719 19px,
-      #070719 20px
+      transparent 29px,
+      #070719 29px,
+      #070719 30px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
-      transparent 19px,
-      #070719 19px,
-      #070719 20px
+      transparent 29px,
+      #070719 29px,
+      #070719 30px
     );
-  background-size: 20px 20px, 20px 20px;
+  background-size: 30px 30px, 30px 30px;
 
   /* man fuck this gradient mask lol */
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 100%);
   pointer-events: none;
 }
+
+

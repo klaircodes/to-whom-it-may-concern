@@ -1,17 +1,23 @@
 import { useState } from 'react'
+import { motion as Motion } from 'framer-motion'
+import { FiMinus, FiSquare, FiX, FiSkipBack, FiPause, FiSkipForward, FiChevronUp, FiChevronDown } from 'react-icons/fi'
+import complimentHeadingBg from './assets/images/compliment-heading-bg.svg'
+import Stars from './Stars.jsx'
+import Pop from './Pop.jsx'
 import './App.css'
 import './pixel-borders.css'
 
 function App() {
   const [compliment, setCompliment] = useState('"You are amazing!"')
+  const [isAnimating, setIsAnimating] = useState(false)
   
   const compliments = [
     '"You are amazing!"',
-    '"You brighten everyone\'s day!"',
-    '"You have such a wonderful smile!"',
-    '"Your creativity is inspiring!"',
-    '"You make the world a better place!"',
-    '"You are incredibly talented!"',
+    '"You goon to femboys!"',
+    '"Even if you were cloned, you\'d still be the better-looking one."',
+    '"Tell your parents I said, ‘well done.’"',
+    '"You know…you have a perfectly shaped head."',
+    '"Kevin said you\'re cool."',
     '"Your kindness is contagious!"',
     '"You have great taste!"',
     '"You are stronger than you know!"',
@@ -19,25 +25,36 @@ function App() {
   ]
   
   const generateCompliment = () => {
+    setIsAnimating(true)
     const randomIndex = Math.floor(Math.random() * compliments.length)
     setCompliment(compliments[randomIndex])
+    
+    // Reset animation 
+    setTimeout(() => {
+      setIsAnimating(false)
+    }, 600)
   }
 
+
+
   return (
-    <div className="w-full max-w-2xl mx-auto bg-div shadow-2xl font-mono pixel-corners">
+    <Pop className="w-full max-w-3xl mx-auto bg-div shadow-2xl font-pixel pixel-corners">
       {/* Header */}
-      <div className="bg-div px-3 py-1 flex justify-between items-center border-b-2 border-main">
-        <span className="text-white text-sm font-bold flex items-center">
-          <span className="mr-2">✨</span>
+  <Pop delay={0.15} className="bg-div px-4 py-4 flex justify-between items-center border-b-2 border-main relative">
+        <img 
+          src={complimentHeadingBg} 
+          alt="header background" 
+          className="absolute  h-12 w-auto object-contain pointer-events-none"
+        />
+        <span className="text-white text-xs font-pixel-subheading relative z-10 pl-4">
           compliment generator.exe
-          <span className="ml-2">✨</span>
         </span>
-        <div className="flex space-x-1">
-          <span className="bg-gray-300 px-2 py-1 text-xs border border-gray-500 cursor-pointer hover:bg-gray-200">□</span>
-          <span className="bg-gray-300 px-2 py-1 text-xs border border-gray-500 cursor-pointer hover:bg-gray-200">◇</span>
-          <span className="bg-red-400 px-2 py-1 text-xs border border-gray-500 cursor-pointer hover:bg-red-300">×</span>
+        <div className="flex space-x-2">
+          <span className="bg-none px-2 py-2 text-xs border-2 border-white cursor-pointer hover:scale-105 font-pixel-paragraph flex items-center justify-center text-secondary rounded-sm"><FiMinus className="thick-svg" /></span>
+          <span className="bg-none px-2 py-2 text-xs border-2 border-white cursor-pointer hover:scale-105 font-pixel-paragraph flex items-center justify-center text-secondary rounded-sm"><FiSquare className="thick-svg" /></span>
+          <span className="bg-none px-2 py-2 text-xs border-2 border-white cursor-pointer hover:scale-105 font-pixel-paragraph flex items-center justify-center text-secondary rounded-sm"><FiX className="thick-svg" /></span>
         </div>
-      </div>
+      </Pop>
       
       {/* Main Section */}
       <div className="flex relative">
@@ -49,55 +66,59 @@ function App() {
         </div>
         
         {/* Background */}
-        <div className="flex-1 bg-grid-gradient p-6 relative">
-          {/* Decorative elements */}
-          <div className="absolute top-4 right-4 text-main text-2xl opacity-100 z-10">✨</div>
-          <div className="absolute bottom-8 left-4 text-main text-xl opacity-100 z-10">🌟</div>
-          <div className="absolute top-8 left-1/4 text-main text-lg opacity-100 z-10">✦</div>
-          
+        <div className="flex-1 bg-grid-gradient p-4 relative">
+          {/* Random purple stars */}
+          <Stars />
+      
           <div className="text-center">
             {/* Subheading Container */}
-            <div className="text-main text-sm mb-8 bg-primary p-4 pixel-corners">
-              <div className="mb-4">what is your compliment today?</div>
+            <Pop delay={0.3} className="text-main text-sm mb-8 bg-primary p-2 pixel-corners">
+              <div className="mb-4 font-pixel-subheading">what is your compliment today?</div>
               
               {/* Compliment Display */}
-              <div className="bg-secondary p-6 mb-4 min-h-32 flex items-center justify-center shadow-inner pixel-corners">
-                <div className="text-lg text-main font-medium leading-relaxed">
+              <Pop delay={0.45} className="bg-secondary p-6 mb-4 min-h-60 flex items-center justify-center shadow-inner pixel-corners compliment-bg">
+                <Motion.div
+                  className={`text-lg text-main font-pixel-heading leading-relaxed`}
+                  animate={isAnimating ? { scale: [1, 1.02, 1], opacity: [1, 0.95, 1] } : { scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.55, ease: 'easeOut' }}
+                >
                   {compliment}
-                </div>
-              </div>
+                </Motion.div>
+              </Pop>
               
               {/* Player Controls */}
               <div className="flex justify-center items-center space-x-4">
-                <button className="bg-div hover:opacity-80 border border-main px-3 py-1 rounded text-secondary font-bold">⏮</button>
-                <button className="bg-div hover:opacity-80 border border-main px-3 py-1 rounded text-secondary  font-bold">⏸</button>
-                <button className="bg-div hover:opacity-80 border border-main px-3 py-1 rounded text-secondary  font-bold">⏭</button>
-                <div className="bg-primary border border-main rounded-full h- w-32 relative ml-4">
+                <button className="bg-div hover:opacity-80 border-2 border-main px-3 py-1 rounded text-secondary flex items-center justify-center"><FiSkipBack /></button>
+                <button className="bg-div hover:opacity-80 border-2 border-main px-3 py-1 rounded text-secondary flex items-center justify-center"><FiPause /></button>
+                <button className="bg-div hover:opacity-80 border-2 border-main px-3 py-1 rounded text-secondary flex items-center justify-center"><FiSkipForward /></button>
+                <div className="bg-primary border border-main rounded-full w-full relative ml-4">
                   <div className="bg-div items-center h-1 rounded-full mt-0.5 ml-0.5 mb-0.5 w-1/3"></div>
                   <div className="absolute top-0 left-1/3 transform -translate-x-1/2 w-4 h-2 bg-div border border-main rounded-sm"></div>
                 </div>
               </div>
-            </div>
+            </Pop>
           </div>
           
           {/* Generate Button */}
           <div className="text-center">
-            <button 
-              className="bg-div hover:opacity-80 text-secondary font-bold py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners"
-              onClick={generateCompliment}
-            >
-              GENERATE
-            </button>
+            <Pop delay={0.45} className="inline-block">
+              <button 
+                className="bg-div hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners"
+                onClick={generateCompliment}
+              >
+                GENERATE
+              </button>
+            </Pop>
           </div>
         </div>
         
         {/* Scrollbar */}
         <div className="w-8 bg-secondary border-l-2 border-main flex flex-col p-1 ">
-          <div className="bg-div hover:opacity-80 border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center cursor-pointer text-xs text-primary ">▲</div>
+          <div className="bg-div hover:opacity-80 border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center cursor-pointer text-xs text-primary font-pixel-paragraph"><FiChevronUp className="thick-svg" /></div>
           <div className="flex-1 bg-secondary relative">
             <div className="absolute top-2 left-0.5 right-0.5 h-24 bg-div border-2 border-main rounded-sm"></div>
           </div>
-          <div className="bg-div hover:opacity-80 border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center cursor-pointer text-xs text-primary">▼</div>
+          <div className="bg-div hover:opacity-80 border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center cursor-pointer text-xs text-primary font-pixel-paragraph"><FiChevronDown className="thick-svg" /></div>
         </div>
       </div>
       
@@ -107,7 +128,7 @@ function App() {
           <div className="w-3 h-3 bg-div rounded"></div>
         </div>
       </div>
-    </div>
+    </Pop>
   )
 }
 
