@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { motion as Motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import defaultFolder from './assets/images/default-folder.svg';
 import hoverFolder from './assets/images/hover-folder.svg';
 
-export default function Start({ onOpen }) {
+export default function Start() {
   const [isHovered, setIsHovered] = React.useState(false);
+  const navigate = useNavigate();
 
   return (
-  <Motion.div
+    
+    <Motion.div
       initial={{ scale: 0.7, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       whileHover={{ scale: 1.1, rotate: -2 }}
@@ -15,9 +18,9 @@ export default function Start({ onOpen }) {
       style={{ display: 'inline-block', cursor: 'pointer' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={onOpen}
+      onClick={() => navigate('/girlstart')}
     >
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div className="custom-hover" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <img
           src={isHovered ? hoverFolder : defaultFolder}
           alt="folder"
