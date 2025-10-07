@@ -5,8 +5,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
   padding: 2rem;
+}
+
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url('../src/assets/images/background-img2.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  /* backdrop-filter: blur(5px); */
 }
 
 .logo {
@@ -47,7 +58,7 @@
 
 /* custom color classes */
 .bg-div {
-  background-color: #9E96D1;
+  background-color: #8091FD;
 }
 
 .bg-primary {
@@ -55,18 +66,22 @@
 }
 
 .bg-secondary {
-  background-color: #F2E7F0;
+  background-color: #DDEAFC;
+}
+
+.bg-tertiary {
+  background-color: #C89CDC;
 }
 
 .text-main {
-  color: #070719;
+  color: #41419F;
 }
 
 .text-secondary {
   color: #FFFFFF;
 }
 .border-main {
-  border-color: #070719;
+  border-color: #41419F;
 }
 
 
@@ -113,7 +128,7 @@
 /* ----------------------------- */
 /* SVG background for compliment area */
 .compliment-bg {
-  background-image: url('./assets/images/compliment-bg.svg');
+  background-image: url('./assets/images/compliment-bg2.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

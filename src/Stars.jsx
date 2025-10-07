@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { motion as Motion } from 'framer-motion'
-import purpleStar from './assets/images/purple-star.svg'
+import purpleStar from './assets/images/purple-star2.svg'
 
 const Stars = memo(function Stars() {
   const fixed = [
