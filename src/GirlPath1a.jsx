@@ -7,9 +7,9 @@ import { motion as Motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 import complimentHeadingBg from './assets/images/compliment-heading-bg2.svg';
-import animeGirl from './assets/images/anime-girl-default.png';
+import animeGirl from './assets/images/anime-girl-scheming.png';
 import Typewriter from './Typewriter.jsx';
-import DialogueInitial from './DialogueInitial.jsx';
+import Dialogue1a from './Dialogue1a.jsx';
 import clickSound from './assets/sound/blip-select.mp3';
 
 export default function GirlPath1() {
@@ -22,7 +22,7 @@ export default function GirlPath1() {
 
   const handleFirstButtonClick = () => {
     playSound();
-    navigate('/girlpath1');
+    navigate('/maincontent');
   };
 
   const handleSecondButtonClick = () => {
@@ -79,11 +79,11 @@ export default function GirlPath1() {
               </div>
               {/* Scrollbar */}
               <Pop delay={0.4} className="w-8 bg-secondary border-l-2 border-main flex flex-col p-1 ">
-                <div className="custom-hover bg-tertiary border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center text-xs text-primary font-pixel-paragraph"><FiChevronUp className="thick-svg" /></div>
+                <div className="bg-tertiary border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center cursor-pointer text-xs text-primary font-pixel-paragraph"><FiChevronUp className="thick-svg" /></div>
                 <div className="flex-1 bg-secondary relative">
                   <div className="absolute top-2 left-0.5 right-0.5 h-24 bg-tertiary border-2 border-main rounded-sm"></div>
                 </div>
-                <div className="custom-hoverbg-tertiary border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center text-xs text-primary font-pixel-paragraph"><FiChevronDown className="thick-svg" /></div>
+                <div className="bg-tertiary border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center cursor-pointer text-xs text-primary font-pixel-paragraph"><FiChevronDown className="thick-svg" /></div>
               </Pop>
             </div>
             {/* Footer */}
@@ -95,26 +95,24 @@ export default function GirlPath1() {
           </Pop>
         </div>
 
-
-        {/* New Div to the Right */}
+        {/* Right div */}
         <div className="bg-none w-[400px] px-2 relative flex flex-col justify-end items-end mb-8 space-y-4" >
             <Pop delay={0.45} className="block">
               <button onClick={handleFirstButtonClick}
                 className="custom-hover bg-tertiary hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
               >
-                "Omg! Mommy Yes! Hi Hello!!!"
+                "Well.. SHOW ME!!!"
               </button>
             </Pop>
             <Pop delay={0.5} className="block">
               <button onClick={handleSecondButtonClick}
                 className="custom-hover bg-secondary hover:opacity-80 text-primary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
               >
-                "Uhhh.. hi... I guess..."
+                "Am I being held captive??"
               </button>
             </Pop>
         </div>
       </div>
-
 
 
       {/* Dating Sim Text Box */}
@@ -135,7 +133,7 @@ export default function GirlPath1() {
           {/* Message Box */}
           <Pop delay={0.25} className="bg-secondary pixel-corners m-4 p-6 flex-1 flex items-center border-2 border-main grid-bg" style={{ minHeight: '120px', fontSize: '1.5rem', fontFamily: 'inherit' }}>
             {/* Typewriter animated message */}
-            <DialogueInitial
+            <Dialogue1a
             />
 
           </Pop>
@@ -144,3 +142,5 @@ export default function GirlPath1() {
     </div>
   );
 }
+
+

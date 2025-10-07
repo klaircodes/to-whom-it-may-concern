@@ -6,12 +6,18 @@ import Stars from './Stars.jsx'
 import Pop from './Pop.jsx'
 import './App.css'
 import './pixel-borders.css'
+import clickSound from './assets/sound/blip-select.mp3';
 
 function MainContent() {
   const [compliment, setCompliment] = useState('"You are amazing!"')
   const [isAnimating, setIsAnimating] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   
+  const playSound = () => {
+    const audio = new Audio(clickSound);
+    audio.play();
+  };
+
   const generateCompliment = async () => {
     setIsAnimating(true)
     setIsLoading(true)
@@ -105,8 +111,11 @@ function MainContent() {
           <div className="text-center">
             <Pop delay={0.45} className="inline-block">
               <button 
-                className="bg-tertiary hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60"
-                onClick={generateCompliment}
+                className="custom-hover bg-tertiary hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60"
+                onClick={() => {
+                  playSound();
+                  generateCompliment();
+                }}
                 disabled={isLoading}
               >
                 {isLoading ? 'LOADING...' : 'GENERATE'}

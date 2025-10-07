@@ -3,17 +3,27 @@ import { FiMinus, FiSquare, FiX, FiChevronUp, FiChevronDown } from 'react-icons/
 import Pop from './Pop.jsx';
 import './App.css';
 import './pixel-borders.css';
+import './GirlPath2.css'; // Importing the new CSS file for horror-themed background
 import { motion as Motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
 
 import complimentHeadingBg from './assets/images/compliment-heading-bg2.svg';
-import animeGirl from './assets/images/anime-girl-default.png';
+import animeGirl from './assets/images/uhoh.png';
 import Typewriter from './Typewriter.jsx';
-import DialogueInitial from './DialogueInitial.jsx';
+import Dialogue2 from './Dialogue2.jsx';
 import clickSound from './assets/sound/blip-select.mp3';
+import GlitchEffect from "./GlitchEffect.jsx";
 
-export default function GirlPath1() {
+export default function GirlPath2() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.classList.add("girlpath2");
+    return () => {
+      document.body.classList.remove("girlpath2");
+    };
+  }, []);
 
   const playSound = () => {
     const audio = new Audio(clickSound);
@@ -22,7 +32,7 @@ export default function GirlPath1() {
 
   const handleFirstButtonClick = () => {
     playSound();
-    navigate('/girlpath1');
+    navigate('/girlstart');
   };
 
   const handleSecondButtonClick = () => {
@@ -31,22 +41,24 @@ export default function GirlPath1() {
   };
 
   return (
-    <div className="big-container flex flex-col">
+    <>
+  <GlitchEffect>
+    <div className="inverted big-container flex flex-col">
       {/* Upper Div */}
       <div className="upper-div flex">
         {/* Main Window */}
         <div className="relative flex flex-col items-center w-[500px] bg-none mt-8 mb-8" style={{ position: 'relative', zIndex: 2 }}>
           {/* Anime Girl*/}
-          <Motion.img
-            src={animeGirl}
-            alt="Anime Girl"
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.05 }}
-            className="absolute left-1/2 -translate-x-1/2 -top-40 w-[22rem] h-[28rem] object-cover select-none drop-shadow-lg"
-            style={{ zIndex: 50, pointerEvents: 'none', position: 'absolute' }}
-            draggable={false}
-          />
+            <Motion.img
+              src={animeGirl}
+              alt="Anime Girl"
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.05 }}
+              className="absolute left-1/2 -translate-x-1/2 -top-40 w-[22rem] h-[28rem] object-cover select-none drop-shadow-lg"
+              style={{ zIndex: 50, pointerEvents: 'none', position: 'absolute' }}
+              draggable={false}
+            />
           <Pop className="w-full bg-div shadow-2xl font-pixel pixel-corners" style={{ position: 'relative', zIndex: 1 }}>
             {/* Header */}
             <Pop delay={0.15} className="bg-div px-2 py-4 flex justify-between items-center border-b-2 border-main relative">
@@ -56,7 +68,7 @@ export default function GirlPath1() {
                 className="absolute  h-12 w-auto object-contain pointer-events-none"
               />
               <span className="text-white text-xs font-pixel-subheading relative z-10 pl-14">
-                girl.exe
+                ??!?!???????????/??????????//.exe
               </span>
             </Pop>
             {/* Main Section */}
@@ -79,11 +91,11 @@ export default function GirlPath1() {
               </div>
               {/* Scrollbar */}
               <Pop delay={0.4} className="w-8 bg-secondary border-l-2 border-main flex flex-col p-1 ">
-                <div className="custom-hover bg-tertiary border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center text-xs text-primary font-pixel-paragraph"><FiChevronUp className="thick-svg" /></div>
+                <div className="bg-tertiary border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center cursor-pointer text-xs text-primary font-pixel-paragraph"><FiChevronUp className="thick-svg" /></div>
                 <div className="flex-1 bg-secondary relative">
                   <div className="absolute top-2 left-0.5 right-0.5 h-24 bg-tertiary border-2 border-main rounded-sm"></div>
                 </div>
-                <div className="custom-hoverbg-tertiary border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center text-xs text-primary font-pixel-paragraph"><FiChevronDown className="thick-svg" /></div>
+                <div className="bg-tertiary border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center cursor-pointer text-xs text-primary font-pixel-paragraph"><FiChevronDown className="thick-svg" /></div>
               </Pop>
             </div>
             {/* Footer */}
@@ -96,20 +108,22 @@ export default function GirlPath1() {
         </div>
 
 
-        {/* New Div to the Right */}
+        {/* Right div */}
         <div className="bg-none w-[400px] px-2 relative flex flex-col justify-end items-end mb-8 space-y-4" >
             <Pop delay={0.45} className="block">
-              <button onClick={handleFirstButtonClick}
+              <button 
+                onClick={handleFirstButtonClick}
                 className="custom-hover bg-tertiary hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
               >
-                "Omg! Mommy Yes! Hi Hello!!!"
+                "I'm scared Please help me..."
               </button>
             </Pop>
             <Pop delay={0.5} className="block">
-              <button onClick={handleSecondButtonClick}
+              <button 
+                onClick={handleSecondButtonClick}
                 className="custom-hover bg-secondary hover:opacity-80 text-primary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
               >
-                "Uhhh.. hi... I guess..."
+                YOU'RE TRAPPED IN HERE WITH ME NOW, MONKEY.
               </button>
             </Pop>
         </div>
@@ -117,6 +131,7 @@ export default function GirlPath1() {
 
 
 
+      {/* Dating Sim Text Box */}
       {/* Dating Sim Text Box */}
       <Pop className="relative w-[900px] bg-div pixel-corners shadow-lg border-2 border-main flex flex-row" style={{ position: 'relative', zIndex: 2 }}>
         {/* Text Content */}
@@ -135,12 +150,14 @@ export default function GirlPath1() {
           {/* Message Box */}
           <Pop delay={0.25} className="bg-secondary pixel-corners m-4 p-6 flex-1 flex items-center border-2 border-main grid-bg" style={{ minHeight: '120px', fontSize: '1.5rem', fontFamily: 'inherit' }}>
             {/* Typewriter animated message */}
-            <DialogueInitial
+            <Dialogue2
             />
 
           </Pop>
         </div>
       </Pop>
     </div>
+    </GlitchEffect>
+    </>
   );
 }
