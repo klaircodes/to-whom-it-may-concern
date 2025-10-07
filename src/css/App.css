@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 #root {
   min-height: 100vh;
@@ -6,20 +6,19 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  cursor: url('./src/assets/images/heart-outline.svg'), auto;
+  cursor: url("./src/assets/images/heart-outline.svg"), auto;
 }
-
 
 body {
   min-height: 100vh;
   min-width: 100vw;
-  background-image: url('../src/assets/images/background-img.jpg');
+  background-image: url("../src/assets/images/background-img.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   image-rendering: pixelated;
   backdrop-filter: blur(8px);
-  cursor: url('/src/assets/images/heart-outline.svg'), auto;
+  cursor: url("/src/assets/images/heart-outline.svg"), auto;
 }
 
 .logo {
@@ -60,37 +59,36 @@ body {
 
 /* custom color classes */
 .bg-div {
-  background-color: #8091FD;
+  background-color: #8091fd;
 }
 
 .bg-primary {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .bg-secondary {
-  background-color: #DDEAFC;
+  background-color: #ddeafc;
 }
 
 .bg-tertiary {
-  background-color: #C89CDC;
+  background-color: #c89cdc;
 }
 
 .text-main {
-  color: #41419F;
+  color: #41419f;
 }
 
 .text-secondary {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .border-main {
-  border-color: #41419F;
+  border-color: #41419f;
 }
-
 
 /* ----------------------------- */
 /* pixel fonts aaaaaa */
 .font-pixel-heading {
-  font-family: 'Press Start 2P', monospace;
+  font-family: "Press Start 2P", monospace;
   font-size: 12px;
   text-rendering: pixelated;
   image-rendering: pixelated;
@@ -99,7 +97,7 @@ body {
 }
 
 .font-pixel-subheading {
-  font-family: 'Press Start 2P', monospace;
+  font-family: "Press Start 2P", monospace;
   font-size: 10px;
   text-rendering: pixelated;
   image-rendering: pixelated;
@@ -108,7 +106,7 @@ body {
 }
 
 .font-pixel-paragraph {
-  font-family: 'Press Start 2P', monospace;
+  font-family: "Press Start 2P", monospace;
   font-size: 10px;
   text-rendering: pixelated;
   image-rendering: pixelated;
@@ -119,18 +117,18 @@ body {
 /* ----------------------------- */
 /* simple thick icons */
 .thick-svg {
-  filter: drop-shadow(0.5px 0 0 currentColor) drop-shadow(-0.5px 0 0 currentColor);
+  filter: drop-shadow(0.5px 0 0 currentColor)
+    drop-shadow(-0.5px 0 0 currentColor);
 }
 
 .normal-svg {
   filter: none;
 }
 
-
 /* ----------------------------- */
 /* SVG background for compliment area */
 .compliment-bg {
-  background-image: url('../assets/images/compliment-bg2.svg');
+  background-image: url("../assets/images/compliment-bg2.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -139,22 +137,20 @@ body {
 
 /* ----------------------------- */
 
-
 .bg-grid-gradient {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   position: relative;
 }
 
 /* fucking shiballlll */
 .bg-grid-gradient::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    repeating-linear-gradient(
+  background-image: repeating-linear-gradient(
       0deg,
       transparent,
       transparent 29px,
@@ -171,17 +167,23 @@ body {
   background-size: 30px 30px, 30px 30px;
 
   /* man fuck this gradient mask lol */
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 100%);
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
   pointer-events: none;
 }
 
 .custom-hover {
-  cursor: url('../assets/images/hand-pointer.svg'), pointer;
+  cursor: url("../assets/images/hand-pointer.svg"), pointer;
 }
 
 .button:hover {
   cursor: inherit;
 }
-
-
