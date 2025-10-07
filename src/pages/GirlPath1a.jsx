@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { FiMinus, FiSquare, FiX, FiChevronUp, FiChevronDown } from 'react-icons/fi';
-import Pop from './Pop.jsx';
-import './App.css';
-import './pixel-borders.css';
+import Pop from '../components/Pop.jsx';
+import '../css/App.css';
+import '../css/pixel-borders.css';
 import { motion as Motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-import complimentHeadingBg from './assets/images/compliment-heading-bg2.svg';
-import animeGirl from './assets/images/anime-girl-scheming.png';
-import Typewriter from './Typewriter.jsx';
-import Dialogue1a from './Dialogue1a.jsx';
-import clickSound from './assets/sound/blip-select.mp3';
+import complimentHeadingBg from '../assets/images/compliment-heading-bg2.svg';
+import animeGirl from '../assets/images/anime-girl-scheming.png';
+import Typewriter from '../components/Typewriter.jsx';
+import Dialogue1a from '../dialogue/Dialogue1a.jsx';
+import clickSound from '../assets/sound/blip-select.mp3';
 
 export default function GirlPath1() {
   const navigate = useNavigate();

@@ -13,12 +13,12 @@
 body {
   min-height: 100vh;
   min-width: 100vw;
-  background-image: url('../src/assets/images/background-img2.jpeg');
+  background-image: url('../src/assets/images/background-img.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   image-rendering: pixelated;
-  /* backdrop-filter: blur(5px); */
+  backdrop-filter: blur(8px);
   cursor: url('/src/assets/images/heart-outline.svg'), auto;
 }
 
@@ -130,7 +130,7 @@ body {
 /* ----------------------------- */
 /* SVG background for compliment area */
 .compliment-bg {
-  background-image: url('./assets/images/compliment-bg2.svg');
+  background-image: url('../assets/images/compliment-bg2.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -177,7 +177,7 @@ body {
 }
 
 .custom-hover {
-  cursor: url('./assets/images/hand-pointer.svg'), pointer;
+  cursor: url('../assets/images/hand-pointer.svg'), pointer;
 }
 
 .button:hover {

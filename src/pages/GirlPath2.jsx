@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { FiMinus, FiSquare, FiX, FiChevronUp, FiChevronDown } from 'react-icons/fi';
-import Pop from './Pop.jsx';
-import './App.css';
-import './pixel-borders.css';
-import './GirlPath2.css'; // Importing the new CSS file for horror-themed background
+import Pop from '../components/Pop.jsx';
+import '../css/App.css';
+import '../css/pixel-borders.css';
+import '../css/GirlPath2.css'; // Importing the new CSS file for horror-themed background
 import { motion as Motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 
-import complimentHeadingBg from './assets/images/compliment-heading-bg2.svg';
-import animeGirl from './assets/images/uhoh.png';
-import Typewriter from './Typewriter.jsx';
-import Dialogue2 from './Dialogue2.jsx';
-import clickSound from './assets/sound/blip-select.mp3';
-import GlitchEffect from "./GlitchEffect.jsx";
+import complimentHeadingBg from '../assets/images/compliment-heading-bg2.svg';
+import animeGirl from '../assets/images/uhoh.png';
+import Typewriter from '../components/Typewriter.jsx';
+import Dialogue2 from '../dialogue/Dialogue2.jsx';
+import clickSound from '../assets/sound/blip-select.mp3';
+import GlitchEffect from "../components/GlitchEffect.jsx";
 
 export default function GirlPath2() {
   const navigate = useNavigate();

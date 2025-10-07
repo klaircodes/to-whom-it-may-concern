@@ -1,5 +1,5 @@
 body.girlpath2 {
-  background: url("./assets/images/horror.jpg") no-repeat center center fixed;
+  background: url("../assets/images/horror.jpg") no-repeat center center fixed;
   background-size: cover;
   filter: brightness(1) contrast(1.2); /* Added invert filter */
 }

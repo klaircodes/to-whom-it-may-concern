@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
-import defaultSong from "./assets/sound/bg-music.mp3";
-import girlPath2Song from "./assets/sound/girlpath2-song.mp3";
+import defaultSong from "../assets/sound/bg-music.mp3";
+import girlPath2Song from "../assets/sound/girlpath2-song.mp3";
 import { FiVolumeX, FiVolume2 } from "react-icons/fi";
 
 export default function MusicPlayer({ loop = true }) {

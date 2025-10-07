@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { motion as Motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import defaultFolder from './assets/images/default-folder.svg';
-import hoverFolder from './assets/images/hover-folder.svg';
+import defaultFolder from '../assets/images/default-folder.svg';
+import hoverFolder from '../assets/images/hover-folder.svg';
+import '../css/App.css';
 
 export default function Start() {
   const [isHovered, setIsHovered] = React.useState(false);

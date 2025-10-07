@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import Typewriter from "./Typewriter";
+import Typewriter from "../components/Typewriter";
 
-function Dialogue2() {
+function Dialogue1() {
   const audioRef = useRef(null);
 
   const playSound = () => {
@@ -24,7 +24,7 @@ function Dialogue2() {
     <div>
       <audio ref={audioRef} src="./src/assets/sound/blippity.mp3" preload="auto" />
       <Typewriter
-        text='  It seems you have chosen the wrong option. Try again.'
+        text='  OMG!!!! Im like sooooo excited to meet you!!! My name is Vivian! But you can call me Vivi! Hehe~ And yours?'
         onStart={playSound}
         onDone={stopSound}
         className="text-main font-pixel-heading leading-relaxed"
@@ -33,4 +33,4 @@ function Dialogue2() {
   );
 }
 
-export default Dialogue2;
+export default Dialogue1;

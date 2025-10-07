@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { motion as Motion } from 'framer-motion'
 import { FiMinus, FiSquare, FiX, FiSkipBack, FiPause, FiSkipForward, FiChevronUp, FiChevronDown } from 'react-icons/fi'
-import complimentHeadingBg from './assets/images/compliment-heading-bg2.svg'
-import Stars from './Stars.jsx'
-import Pop from './Pop.jsx'
-import './App.css'
-import './pixel-borders.css'
-import clickSound from './assets/sound/blip-select.mp3';
+import complimentHeadingBg from '../assets/images/compliment-heading-bg2.svg'
+import Stars from '../components/Stars.jsx'
+import Pop from '../components/Pop.jsx'
+import '../css/App.css'
+import '../css/pixel-borders.css'
+import clickSound from '../assets/sound/blip-select.mp3';
 
 function MainContent() {
   const [compliment, setCompliment] = useState('"You are amazing!"')
@@ -108,10 +108,10 @@ function MainContent() {
           </div>
           
           {/* Generate Button */}
-          <div className="text-center">
+          <div className="custom-hover text-center">
             <Pop delay={0.45} className="inline-block">
               <button 
-                className="custom-hover bg-tertiary hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60"
+                className=" bg-tertiary hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 custom-hover"
                 onClick={() => {
                   playSound();
                   generateCompliment();

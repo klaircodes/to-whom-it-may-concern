@@ -31,7 +31,6 @@
   position: relative;
 }
 .pixel-corners {
-  overflow: visible !important ;
   border: 3px solid transparent;
 }
 .pixel-corners--wrapper {
@@ -121,7 +120,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #41419F;
+  background: #070719;
   display: block;
   pointer-events: none;
 }

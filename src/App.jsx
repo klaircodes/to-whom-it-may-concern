@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Start from './Start.jsx';
-import GirlStart from './GirlStart.jsx';
-import GirlPath1 from './GirlPath1.jsx';
-import GirlPath2 from './GirlPath2.jsx';
-import GirlPath1a from './GirlPath1a.jsx';
-import MainContent from './MainContent.jsx';
-import MusicPlayer from './MusicPlayer.jsx';
+import Start from './pages/Start.jsx';
+import GirlStart from './pages/GirlStart.jsx';
+import GirlPath1 from './pages/GirlPath1.jsx';
+import GirlPath2 from './pages/GirlPath2.jsx';
+import GirlPath1a from './pages/GirlPath1a.jsx';
+import MainContent from './pages/MainContent.jsx';
+import MusicPlayer from './components/MusicPlayer.jsx';
 
 export default function App() {
   return (
