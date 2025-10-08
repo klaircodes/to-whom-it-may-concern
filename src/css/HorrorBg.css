@@ -1,7 +1,31 @@
 body.girlpath1ba {
   background: url("../assets/images/horror.jpg") no-repeat center center fixed;
   background-size: cover;
-  filter: brightness(1) contrast(1.2); /* Added invert filter */
+  filter: brightness(1) contrast(1.2);
+}
+
+body.girlpath3a {
+  background: url("../assets/images/horror.jpg") no-repeat center center fixed;
+  background-size: cover;
+  filter: brightness(1) contrast(1.2);
+}
+
+body.girlpath3aa {
+  background: url("../assets/images/horror.jpg") no-repeat center center fixed;
+  background-size: cover;
+  filter: brightness(1) contrast(1.2);
+}
+
+body.girlpath3b {
+  background: url("../assets/images/horror.jpg") no-repeat center center fixed;
+  background-size: cover;
+  filter: brightness(1) contrast(1.2);
+}
+
+body.girlpathrizzending {
+  background: url("../assets/images/horror.jpg") no-repeat center center fixed;
+  background-size: cover;
+  filter: brightness(1) contrast(1.2);
 }
 
 .inverted {

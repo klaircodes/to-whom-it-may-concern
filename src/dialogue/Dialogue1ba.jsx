@@ -24,7 +24,7 @@ function Dialogue1ba() {
     <div>
       <audio
         ref={audioRef}
-        src="./src/assets/sound/blippity.mp3"
+        src="./src/assets/sound/scary-blip.mp3"
         preload="auto"
       />
       <Typewriter

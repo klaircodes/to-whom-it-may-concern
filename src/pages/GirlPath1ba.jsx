@@ -38,12 +38,12 @@ export default function GirlPath1ba() {
 
   const handleFirstButtonClick = () => {
     playSound();
-    navigate("/girlstart");
+    navigate("/girlpath3a");
   };
 
   const handleSecondButtonClick = () => {
     playSound();
-    navigate("/girlpath1ba");
+    navigate("/girlpath3b");
   };
 
   return (
@@ -164,7 +164,7 @@ export default function GirlPath1ba() {
                       onClick={handleFirstButtonClick}
                       className="custom-hover bg-tertiary hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
                     >
-                      "I'm scared Please help me..."
+                      "uh... rizzzzzzzzzzzzzzzzzzzzzzzzz??/"
                     </button>
                   </GlitchEffect>
                 </Pop>
@@ -174,7 +174,7 @@ export default function GirlPath1ba() {
                       onClick={handleSecondButtonClick}
                       className="custom-hover bg-secondary hover:opacity-80 text-primary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
                     >
-                      YOU'RE TRAPPED IN HERE WITH ME NOW, MONKEY.
+                      "Wha-.. Where am I?? Where is the girl?"
                     </button>
                   </GlitchEffect>
                 </Pop>

@@ -28,7 +28,7 @@ function DialogueGoodEnding() {
         preload="auto"
       />
       <Typewriter
-        text="  You're so cute when you're trying to flirt!! Aww you're flustered! Hahaha!"
+        text="  You're so cute when you're trying to flirt!! Aww you're flustered! Hahaha! We should hang out sometime, cutie~"
         onStart={playSound}
         onDone={stopSound}
         className="text-main font-pixel-heading leading-relaxed"

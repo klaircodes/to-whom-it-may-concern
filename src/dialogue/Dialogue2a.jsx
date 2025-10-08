@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Typewriter from "../components/Typewriter";
 
-function Dialogue2() {
+function Dialogue2a() {
   const audioRef = useRef(null);
 
   const playSound = () => {
@@ -37,4 +37,4 @@ function Dialogue2() {
   );
 }
 
-export default Dialogue2;
+export default Dialogue2a;

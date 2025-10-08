@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import defaultSong from "../assets/sound/bg-music.mp3";
 import horrorSong from "../assets/sound/horror.mp3";
+import horrorRizzSong from "../assets/sound/horror-rizz.mp3";
 import { FiVolumeX, FiVolume2 } from "react-icons/fi";
 
 export default function MusicPlayer({ loop = true }) {
@@ -18,15 +19,23 @@ export default function MusicPlayer({ loop = true }) {
     const horrorPaths = [
       "/girlpath1ba",
       "/girlpath3",
-      "/girlpath3a",
-      "/girlpath3aa",
       "/girlpath3b",
       "/girlpath3ba",
     ];
 
-    const newSong = horrorPaths.includes(location.pathname)
-      ? horrorSong
-      : defaultSong;
+    const horrorRizzPaths = [
+      "/girlpath3a",
+      "/girlpath3aa",
+      "/girlpathrizzending",
+    ];
+
+    let newSong = defaultSong;
+
+    if (horrorPaths.includes(location.pathname)) {
+      newSong = horrorSong;
+    } else if (horrorRizzPaths.includes(location.pathname)) {
+      newSong = horrorRizzSong;
+    }
 
     if (currentSong !== newSong) {
       audio.src = newSong;
