@@ -28,7 +28,7 @@ function Dialogue3a() {
         preload="auto"
       />
       <Typewriter
-        text="  Wa-it... What.. this is allowed? HEyyy You can't j-just rizz one me like that, b-bakaaa!!"
+        text="  Wa-it... What.. this is allowed? HEyyy You can't j-just rizz on me like that, b-bakaaa!!"
         onStart={playSound}
         onDone={stopSound}
         className="text-main font-pixel-heading leading-relaxed"

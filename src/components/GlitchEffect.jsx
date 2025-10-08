@@ -1,6 +1,14 @@
 import { motion as Motion } from "framer-motion";
 
-export default function GlitchEffect({ children, delay = 2 }) {
+export default function GlitchEffect({
+  children,
+  delay = 2,
+  effect = "default",
+}) {
+  if (effect === "none") {
+    return <>{children}</>;
+  }
+
   return (
     <Motion.div
       className="glitch-container"
@@ -23,7 +31,7 @@ const superFastFlickerAndShakeVariants = (delay) => ({
       repeatType: "loop",
       duration: 0.5,
       times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 1],
-      repeatDelay: delay, 
+      repeatDelay: delay,
     },
   },
 });

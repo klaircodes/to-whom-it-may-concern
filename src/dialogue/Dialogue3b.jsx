@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Typewriter from "../components/Typewriter";
 
-function Dialogue2a() {
+function Dialogue3b() {
   const audioRef = useRef(null);
 
   const playSound = () => {
@@ -24,11 +24,11 @@ function Dialogue2a() {
     <div>
       <audio
         ref={audioRef}
-        src="./src/assets/sound/blippity.mp3"
+        src="./src/assets/sound/scary-blip.mp3"
         preload="auto"
       />
       <Typewriter
-        text="  Woah.. That's really rude.I'm just trying to be friendly here. But okay, if you don't want to tell me your name, that's fine I guess."
+        text="  You are in my domain now... There's no escape. And the girl? She's gone. Don't even think about trying to find her."
         onStart={playSound}
         onDone={stopSound}
         className="text-main font-pixel-heading leading-relaxed"
@@ -37,4 +37,4 @@ function Dialogue2a() {
   );
 }
 
-export default Dialogue2a;
+export default Dialogue3b;

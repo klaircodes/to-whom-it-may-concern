@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import defaultSong from "../assets/sound/bg-music.mp3";
 import horrorSong from "../assets/sound/horror.mp3";
 import horrorRizzSong from "../assets/sound/horror-rizz.mp3";
+import quackSound from "../assets/sound/quack.mp3";
 import { FiVolumeX, FiVolume2 } from "react-icons/fi";
 
 export default function MusicPlayer({ loop = true }) {
@@ -21,6 +22,8 @@ export default function MusicPlayer({ loop = true }) {
       "/girlpath3",
       "/girlpath3b",
       "/girlpath3ba",
+      "/girlpath3bb",
+      "/girlpathbadending",
     ];
 
     const horrorRizzPaths = [
@@ -28,6 +31,8 @@ export default function MusicPlayer({ loop = true }) {
       "/girlpath3aa",
       "/girlpathrizzending",
     ];
+
+    const quackPath = "/girlpathbadending";
 
     let newSong = defaultSong;
 
@@ -42,6 +47,11 @@ export default function MusicPlayer({ loop = true }) {
       audio.currentTime = 0;
       audio.play();
       setCurrentSong(newSong);
+    }
+
+    if (location.pathname === quackPath) {
+      const quackAudio = new Audio(quackSound);
+      quackAudio.play();
     }
 
     if (audio.paused) {

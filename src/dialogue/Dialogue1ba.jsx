@@ -28,10 +28,11 @@ function Dialogue1ba() {
         preload="auto"
       />
       <Typewriter
-        text="  YOU   FUCKEDDDD   UPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP"
+        text="  Y̸O̷U̶ ̶ ̸ ̶F̶U̵C̵K̶E̷D̶D̵D̷D̸ ̴ ̴ ̸U̵P̷P̸P̷P̶P̸P̶P̶P̷P̴P̸P̵P̵P̵P̵P̷P̶P̶P̷P̴P̷P̴P̸P̷P̶P̴P̵P̷P̴P̷P̴P̵P̷P̶P̵P̵P̸P̴P̷P̸P̷P̶P̸P̶P̷P̵P̴P̵P̷P̵P̴P̴P̶P̶P̷P̷P̸P̶P̸P̵P̸P̴P̸P̸P̸P̴"
         onStart={playSound}
+        speed={20}
         onDone={stopSound}
-        className="text-main font-pixel-heading leading-relaxed"
+        className="text-main font-pixel-heading leading-relaxed "
       />
     </div>
   );

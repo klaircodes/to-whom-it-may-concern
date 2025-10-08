@@ -59,7 +59,7 @@ function MainContent() {
     if (compliment === "Your rizz goes here.") return;
 
     const randomPath =
-      Math.random() < 0.5 ? "/girlpathgoodending" : "/girlpath2";
+      Math.random() < 0.5 ? "/girlpathgoodending" : "/girlpath3";
     navigate(randomPath);
   };
 
