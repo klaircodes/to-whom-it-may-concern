@@ -16,15 +16,19 @@ function Dialogue1() {
       setTimeout(() => {
         audioRef.current.pause();
         audioRef.current.currentTime = 0; // Reset audio to the start
-      }, 500); 
+      }, 500);
     }
   };
 
   return (
     <div>
-      <audio ref={audioRef} src="./src/assets/sound/blippity.mp3" preload="auto" />
+      <audio
+        ref={audioRef}
+        src="./src/assets/sound/blippity.mp3"
+        preload="auto"
+      />
       <Typewriter
-        text='  Ah! Shrish you said? Hehe~ I heard that name from Klair! I think she has a gift for you!'
+        text="  Whatever It's okay.. I'm Vivian, nice to meet you. And you are?"
         onStart={playSound}
         onDone={stopSound}
         className="text-main font-pixel-heading leading-relaxed"

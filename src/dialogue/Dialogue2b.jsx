@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Typewriter from "../components/Typewriter";
 
-function Dialogue1() {
+function Dialogue2b() {
   const audioRef = useRef(null);
 
   const playSound = () => {
@@ -28,7 +28,8 @@ function Dialogue1() {
         preload="auto"
       />
       <Typewriter
-        text='  "Mommy???" What the fuck is wrong with you, pervert.'
+        text="  Oh? Shrish! That's a wonderful name!
+         I'm so glad to meet you! My friends told me a lot about you! You're the transfer student from Vietnam!"
         onStart={playSound}
         onDone={stopSound}
         className="text-main font-pixel-heading leading-relaxed"
@@ -37,4 +38,4 @@ function Dialogue1() {
   );
 }
 
-export default Dialogue1;
+export default Dialogue2b;

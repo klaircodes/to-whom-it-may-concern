@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Typewriter from "../components/Typewriter";
 
-function Dialogue1() {
+function Dialogue1ba() {
   const audioRef = useRef(null);
 
   const playSound = () => {
@@ -28,7 +28,7 @@ function Dialogue1() {
         preload="auto"
       />
       <Typewriter
-        text='  "Mommy???" What the fuck is wrong with you, pervert.'
+        text="  YOU   FUCKEDDDD   UPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP"
         onStart={playSound}
         onDone={stopSound}
         className="text-main font-pixel-heading leading-relaxed"
@@ -37,4 +37,4 @@ function Dialogue1() {
   );
 }
 
-export default Dialogue1;
+export default Dialogue1ba;

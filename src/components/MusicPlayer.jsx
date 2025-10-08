@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import defaultSong from "../assets/sound/bg-music.mp3";
-import girlPath2Song from "../assets/sound/girlpath2-song.mp3";
+import horrorSong from "../assets/sound/horror.mp3";
 import { FiVolumeX, FiVolume2 } from "react-icons/fi";
 
 export default function MusicPlayer({ loop = true }) {
@@ -15,20 +15,24 @@ export default function MusicPlayer({ loop = true }) {
     audio.loop = loop;
     audio.muted = isMuted;
 
-    if (location.pathname === "/girlpath2") {
-      if (currentSong !== girlPath2Song) {
-        audio.src = girlPath2Song;
-        audio.currentTime = 0;
-        audio.play();
-        setCurrentSong(girlPath2Song);
-      }
-    } else {
-      if (currentSong !== defaultSong) {
-        audio.src = defaultSong;
-        audio.currentTime = 0;
-        audio.play();
-        setCurrentSong(defaultSong);
-      }
+    const horrorPaths = [
+      "/girlpath1ba",
+      "/girlpath3",
+      "/girlpath3a",
+      "/girlpath3aa",
+      "/girlpath3b",
+      "/girlpath3ba",
+    ];
+
+    const newSong = horrorPaths.includes(location.pathname)
+      ? horrorSong
+      : defaultSong;
+
+    if (currentSong !== newSong) {
+      audio.src = newSong;
+      audio.currentTime = 0;
+      audio.play();
+      setCurrentSong(newSong);
     }
 
     if (audio.paused) {

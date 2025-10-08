@@ -13,7 +13,7 @@ import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import complimentHeadingBg from "../assets/images/compliment-heading-bg2.svg";
-import animeGirl from "../assets/images/anime-girl-excited.png";
+import animeGirl from "../assets/images/anime-girl-disgusted.png";
 import Typewriter from "../components/Typewriter.jsx";
 import Dialogue1 from "../dialogue/Dialogue1.jsx";
 import clickSound from "../assets/sound/blip-select.mp3";
@@ -33,7 +33,7 @@ export default function GirlPath1() {
 
   const handleSecondButtonClick = () => {
     playSound();
-    navigate("/girlpath2");
+    navigate("/girlpath1b");
   };
 
   return (
@@ -144,7 +144,7 @@ export default function GirlPath1() {
               onClick={handleFirstButtonClick}
               className="custom-hover bg-tertiary hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
             >
-              "AAa My name is Shrish!!"
+              "Oh! I'm sorry, I thought it was a funny joke..."
             </button>
           </Pop>
           <Pop delay={0.5} className="block">
@@ -152,7 +152,7 @@ export default function GirlPath1() {
               onClick={handleSecondButtonClick}
               className="custom-hover bg-secondary hover:opacity-80 text-main font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
             >
-              "I aint givin you mah name.. hoe.."
+              "Yeah, looking like that, you're one hell of a mommy."
             </button>
           </Pop>
         </div>

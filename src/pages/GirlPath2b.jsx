@@ -13,12 +13,12 @@ import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import complimentHeadingBg from "../assets/images/compliment-heading-bg2.svg";
-import animeGirl from "../assets/images/anime-girl-default.png";
+import animeGirl from "../assets/images/anime-girl-excited.png";
 import Typewriter from "../components/Typewriter.jsx";
-import Dialogue1a from "../dialogue/Dialogue1a.jsx";
+import Dialogue2b from "../dialogue/Dialogue2b.jsx";
 import clickSound from "../assets/sound/blip-select.mp3";
 
-export default function GirlPath1a() {
+export default function GirlPath2b() {
   const navigate = useNavigate();
 
   const playSound = () => {
@@ -28,7 +28,7 @@ export default function GirlPath1a() {
 
   const handleFirstButtonClick = () => {
     playSound();
-    navigate("/girlpath2b");
+    navigate("/maincontent");
   };
 
   const handleSecondButtonClick = () => {
@@ -144,7 +144,7 @@ export default function GirlPath1a() {
               onClick={handleFirstButtonClick}
               className="custom-hover bg-tertiary hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
             >
-              "My name is Shrish!!"
+              Rizz Her Up with the Rizzer
             </button>
           </Pop>
           <Pop delay={0.5} className="block">
@@ -152,7 +152,7 @@ export default function GirlPath1a() {
               onClick={handleSecondButtonClick}
               className="custom-hover bg-secondary hover:opacity-80 text-main font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
             >
-              "Sike, Biactch you thought! I'm not giving you my name."
+              "Yah Yah whatever man.. Get outta my way..."
             </button>
           </Pop>
         </div>
@@ -190,7 +190,7 @@ export default function GirlPath1a() {
             }}
           >
             {/* Typewriter animated message */}
-            <Dialogue1a />
+            <Dialogue2b />
           </Pop>
         </div>
       </Pop>

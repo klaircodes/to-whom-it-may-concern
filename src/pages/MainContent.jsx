@@ -58,7 +58,8 @@ function MainContent() {
   const handleFirstButtonClick = () => {
     if (compliment === "Your rizz goes here.") return;
 
-    const randomPath = Math.random() < 0.5 ? "/girlpath1a" : "/girlpath2";
+    const randomPath =
+      Math.random() < 0.5 ? "/girlpathgoodending" : "/girlpath2";
     navigate(randomPath);
   };
 
