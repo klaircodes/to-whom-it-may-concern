@@ -8,9 +8,9 @@ import GirlPath1b from "./pages/GirlPath1b.jsx";
 import GirlPath1ba from "./pages/GirlPath1ba.jsx";
 // import GirlPath1bb from "./pages/GirlPath1bb.jsx";
 // import GirlPath1bba from "./pages/GirlPath1bba.jsx";
-// import GirlPath2a from "./pages/GirlPath2a.jsx";
+import GirlPath2a from "./pages/GirlPath2a.jsx";
 import GirlPath2b from "./pages/GirlPath2b.jsx";
-// import GirlPath2ab from "./pages/GirlPath2ab.jsx";
+import GirlPath2ab from "./pages/GirlPath2ab.jsx";
 // import GirlPath2aba from "./pages/GirlPath2aba.jsx";
 // import GirlPath2bb from "./pages/GirlPath2bb.jsx";
 // import GirlPath2bbb from "./pages/GirlPath2bbb.jsx";
@@ -38,9 +38,9 @@ export default function App() {
         <Route path="/girlpath1ba" element={<GirlPath1ba />} />
         {/* <Route path="/girlpath1bb" element={<GirlPath1bb />} /> */}
         {/* <Route path="/girlpath1bba" element={<GirlPath1bba />} /> */}
-        {/* <Route path="/girlpath2a" element={<GirlPath2a />} /> */}
+        <Route path="/girlpath2a" element={<GirlPath2a />} />
         <Route path="/girlpath2b" element={<GirlPath2b />} />
-        {/* <Route path="/girlpath2ab" element={<GirlPath2ab />} /> */}
+        <Route path="/girlpath2ab" element={<GirlPath2ab />} />
         {/* <Route path="/girlpath2aba" element={<GirlPath2aba />} /> */}
         {/* <Route path="/girlpath2bb" element={<GirlPath2bb />} /> */}
         {/* <Route path="/girlpath2bbb" element={<GirlPath2bbb />} /> */}

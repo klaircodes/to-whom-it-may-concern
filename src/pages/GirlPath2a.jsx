@@ -13,12 +13,12 @@ import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import complimentHeadingBg from "../assets/images/compliment-heading-bg2.svg";
-import animeGirl from "../assets/images/anime-girl-neutral.png";
+import animeGirl from "../assets/images/anime-girl-angry.png";
 import Typewriter from "../components/Typewriter.jsx";
-import Dialogue1b from "../dialogue/Dialogue1b.jsx";
+import Dialogue2a from "../dialogue/Dialogue2a.jsx";
 import clickSound from "../assets/sound/blip-select.mp3";
 
-export default function GirlPath1b() {
+export default function GirlPath2a() {
   const navigate = useNavigate();
 
   const playSound = () => {
@@ -28,7 +28,7 @@ export default function GirlPath1b() {
 
   const handleFirstButtonClick = () => {
     playSound();
-    navigate("/girlpath1bb");
+    navigate("/girlpath2ab");
   };
 
   const handleSecondButtonClick = () => {
@@ -144,7 +144,7 @@ export default function GirlPath1b() {
               onClick={handleFirstButtonClick}
               className="custom-hover bg-tertiary hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
             >
-              "Oh shit.. mb"
+              "Oh sorry.. my bad"
             </button>
           </Pop>
           <Pop delay={0.5} className="block">
@@ -152,7 +152,7 @@ export default function GirlPath1b() {
               onClick={handleSecondButtonClick}
               className="custom-hover bg-secondary hover:opacity-80 text-main font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
             >
-              "Psshh And? What are you gonna do about it?"
+              "Leave me alone.."
             </button>
           </Pop>
         </div>
@@ -190,7 +190,7 @@ export default function GirlPath1b() {
             }}
           >
             {/* Typewriter animated message */}
-            <Dialogue1b />
+            <Dialogue2a />
           </Pop>
         </div>
       </Pop>

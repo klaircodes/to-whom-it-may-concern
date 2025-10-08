@@ -13,7 +13,7 @@ import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import complimentHeadingBg from "../assets/images/compliment-heading-bg2.svg";
-import animeGirl from "../assets/images/anime-girl-excited.png";
+import animeGirl from "../assets/images/anime-girl-super-happy.png";
 import Typewriter from "../components/Typewriter.jsx";
 import DialogueGoodEnding from "../dialogue/DialogueGoodEnding.jsx";
 import clickSound from "../assets/sound/blip-select.mp3";
@@ -144,7 +144,7 @@ export default function GirlPathGoodEnding() {
               onClick={handleFirstButtonClick}
               className="custom-hover bg-tertiary hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
             >
-              CONGRATS! You found the good ending!
+              CONGRATS! You found the good ending! Go back to the main menu?
             </button>
           </Pop>
           <Pop delay={0.5} className="block">

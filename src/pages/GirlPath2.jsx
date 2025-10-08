@@ -13,7 +13,7 @@ import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import complimentHeadingBg from "../assets/images/compliment-heading-bg2.svg";
-import animeGirl from "../assets/images/anime-girl-excited.png";
+import animeGirl from "../assets/images/anime-girl-smile.png";
 import Typewriter from "../components/Typewriter.jsx";
 import Dialogue2 from "../dialogue/Dialogue2.jsx";
 import clickSound from "../assets/sound/blip-select.mp3";
