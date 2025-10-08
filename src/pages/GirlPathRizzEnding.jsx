@@ -17,17 +17,17 @@ import { useEffect } from "react";
 import complimentHeadingBg from "../assets/images/compliment-heading-bg2.svg";
 import animeGirl from "../assets/images/uhoh-rizz.png";
 import Typewriter from "../components/Typewriter.jsx";
-import Dialogue3aa from "../dialogue/Dialogue3aa.jsx";
+import DialogueRizzEnding from "../dialogue/DialogueRizzEnding.jsx";
 import clickSound from "../assets/sound/blip-select.mp3";
 import GlitchEffect from "../components/GlitchEffect.jsx";
 
-export default function GirlPath3aa() {
+export default function GirlPathRizzEnding() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.body.classList.add("girlpath3aa");
+    document.body.classList.add("girlpathrizzending");
     return () => {
-      document.body.classList.remove("girlpath3aa");
+      document.body.classList.remove("girlpathrizzending");
     };
   }, []);
 
@@ -38,12 +38,12 @@ export default function GirlPath3aa() {
 
   const handleFirstButtonClick = () => {
     playSound();
-    navigate("/girlpathrizzending");
+    navigate("/");
   };
 
   const handleSecondButtonClick = () => {
     playSound();
-    navigate("/girlpathrizzending");
+    navigate("/");
   };
 
   return (
@@ -164,7 +164,7 @@ export default function GirlPath3aa() {
                       onClick={handleFirstButtonClick}
                       className="custom-hover bg-tertiary hover:opacity-80 text-secondary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
                     >
-                      "Of course, Babycakes. Anything for you."
+                      "Congrats?? You found the rizz ending?"
                     </button>
                   </GlitchEffect>
                 </Pop>
@@ -174,7 +174,7 @@ export default function GirlPath3aa() {
                       onClick={handleSecondButtonClick}
                       className="custom-hover bg-secondary hover:opacity-80 text-primary font-pixel-heading py-3 px-8 shadow-lg transform hover:scale-105 transition-all duration-200 pixel-corners disabled:opacity-60 w-[300px]"
                     >
-                      "Klair... what did you make??"
+                      "Seriously what is this???"
                     </button>
                   </GlitchEffect>
                 </Pop>
@@ -215,7 +215,7 @@ export default function GirlPath3aa() {
                   }}
                 >
                   {/* Typewriter animated message */}
-                  <Dialogue3aa />
+                  <DialogueRizzEnding />
                 </Pop>
               </GlitchEffect>
             </div>

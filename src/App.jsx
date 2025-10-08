@@ -20,7 +20,7 @@ import GirlPath3a from "./pages/GirlPath3a.jsx";
 // import GirlPath3b from "./pages/GirlPath3b.jsx";
 import GirlPath3aa from "./pages/GirlPath3aa.jsx";
 // import GirlPathBadEnding from "./pages/GirlPathBadEnding.jsx";
-// import GirlPathRizzEnding from "./pages/GirlPathRizzEnding.jsx";
+import GirlPathRizzEnding from "./pages/GirlPathRizzEnding.jsx";
 import MainContent from "./pages/MainContent.jsx";
 import MusicPlayer from "./components/MusicPlayer.jsx";
 
@@ -50,7 +50,7 @@ export default function App() {
         {/* <Route path="/girlpath3b" element={<GirlPath3b />} /> */}
         <Route path="/girlpath3aa" element={<GirlPath3aa />} />
         {/* <Route path="/girlpathbadending" element={<GirlPathBadEnding />} /> */}
-        {/* <Route path="/girlpathrizzending" element={<GirlPathRizzEnding />} /> */}
+        <Route path="/girlpathrizzending" element={<GirlPathRizzEnding />} />
         <Route path="/maincontent" element={<MainContent />} />
       </Routes>
     </Router>
