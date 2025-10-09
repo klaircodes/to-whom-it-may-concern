@@ -21,13 +21,13 @@ export default function MusicPlayer({ loop = true }) {
       "/girlpath1ba",
       "/girlpath3",
       "/girlpath3b",
-      "/girlpath3ba",
       "/girlpath3bb",
       "/girlpathbadending",
     ];
 
     const horrorRizzPaths = [
       "/girlpath3a",
+      "/girlpath3ba",
       "/girlpath3aa",
       "/girlpathrizzending",
     ];
