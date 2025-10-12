@@ -66,7 +66,7 @@ function MainContent() {
   const handleSkipButtonClick = () => {
     if (compliment === "Your rizz goes here.") return;
 
-    navigate("/girlpath2");
+    navigate("/girlpath3");
   };
 
   return (
