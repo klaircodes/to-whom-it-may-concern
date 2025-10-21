@@ -6,19 +6,19 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  cursor: url("./src/assets/images/heart-outline.svg"), auto;
+  cursor: url("../assets/images/heart-outline.svg"), auto;
 }
 
 body {
   min-height: 100vh;
   min-width: 100vw;
-  background-image: url("../src/assets/images/background-img.jpg");
+  background-image: url("../assets/images/background-img.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   image-rendering: pixelated;
   backdrop-filter: blur(8px);
-  cursor: url("/src/assets/images/heart-outline.svg"), auto;
+  cursor: url("../assets/images/heart-outline.svg"), auto;
 }
 
 .logo {

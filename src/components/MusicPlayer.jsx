@@ -54,9 +54,16 @@ export default function MusicPlayer({ loop = true }) {
       quackAudio.play();
     }
 
-    if (audio.paused) {
-      audio.play();
-    }
+    // Attempt to play; if browser blocks autoplay, resume on first user gesture
+    audio.play().catch(() => {
+      const resume = () => {
+        audio.play().catch(() => {});
+        document.removeEventListener("click", resume);
+        document.removeEventListener("keydown", resume);
+      };
+      document.addEventListener("click", resume, { once: true });
+      document.addEventListener("keydown", resume, { once: true });
+    });
   }, [location.pathname, isMuted, loop, currentSong]);
 
   const toggleMute = () => {
