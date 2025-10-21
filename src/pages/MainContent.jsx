@@ -11,7 +11,7 @@ import {
   FiChevronDown,
 } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import complimentHeadingBg from "../assets/images/compliment-heading-bg2.svg";
+import complimentHeadingBg from "../assets/images/compliment-heading-bg2.svg?url";
 import Stars from "../components/Stars.jsx";
 import Pop from "../components/Pop.jsx";
 import "../css/App.css";
@@ -26,7 +26,7 @@ function MainContent() {
 
   const playSound = () => {
     const audio = new Audio(clickSound);
-    audio.play();
+    audio.play().catch(() => {});
   };
 
   const generateCompliment = async () => {
@@ -36,18 +36,26 @@ function MainContent() {
     let gotText = "";
     try {
       const res = await fetch("https://rizzapi.vercel.app/random");
-      if (res.ok) {
-        const data = await res.json();
-        if (Array.isArray(data) && data.length > 0) {
-          const item = data[Math.floor(Math.random() * data.length)];
-          gotText = item?.text ?? (typeof item === "string" ? item : "");
-        } else if (data && data.text) {
-          gotText = data.text;
-        }
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const contentType = (res.headers.get("content-type") || "").toLowerCase();
+      let data;
+      if (contentType.includes("application/json")) {
+        data = await res.json();
+      } else {
+        data = await res.text();
       }
+
+      if (Array.isArray(data) && data.length > 0) {
+        const item = data[Math.floor(Math.random() * data.length)];
+        gotText = item?.text ?? (typeof item === "string" ? item : "");
+      } else if (data && typeof data === "object" && data.text) {
+        gotText = data.text;
+      } else if (typeof data === "string") {
+        gotText = data;
+      }
+
       setCompliment(gotText ? gotText : defaultFallback);
-    } catch (err) {
-      console.error("Failed to fetch or set compliment:", err);
+    } catch {
       setCompliment(defaultFallback);
     } finally {
       setIsLoading(false);
@@ -57,7 +65,6 @@ function MainContent() {
 
   const handleFirstButtonClick = () => {
     if (compliment === "Your rizz goes here.") return;
-
     const randomPath =
       Math.random() < 0.5 ? "/girlpathgoodending" : "/girlpath3";
     navigate(randomPath);
@@ -65,16 +72,13 @@ function MainContent() {
 
   const handleSkipButtonClick = () => {
     if (compliment === "Your rizz goes here.") return;
-
     navigate("/girlpath3");
   };
 
   return (
     <div style={{ display: "flex" }}>
-      {/* Main Content Wrapper */}
       <div className="w-[800px]" style={{ flex: 1 }}>
         <Pop className="w-full max-w-3xl mx-auto bg-div shadow-2xl font-pixel pixel-corners">
-          {/* Header */}
           <Pop
             delay={0.15}
             className="bg-div px-4 py-4 flex justify-between items-center border-b-2 border-main relative"
@@ -100,22 +104,17 @@ function MainContent() {
             </div>
           </Pop>
 
-          {/* Main Section */}
           <div className="flex relative">
-            {/* Side Panel Border */}
             <div className="w-4 bg-div border-r-2 border-main flex flex-col items-center py-4 space-y-2">
               <div className="w-1 h-3 bg-purple-200 rounded-full opacity-60"></div>
               <div className="w-1 h-2 bg-white rounded-full opacity-40"></div>
               <div className="w-2 h-4 bg-purple-100 rounded-full opacity-30"></div>
             </div>
 
-            {/* Background */}
             <div className="flex-1 bg-grid-gradient p-4 relative">
-              {/* Random purple stars */}
               <Stars />
 
               <div className="text-center">
-                {/* Subheading Container */}
                 <Pop
                   delay={0.3}
                   className="text-main text-sm mb-8 bg-primary p-2 pixel-corners"
@@ -124,13 +123,17 @@ function MainContent() {
                     what's up bb gorl? lemme rizz u up
                   </div>
 
-                  {/* Compliment Display */}
                   <Pop
                     delay={0.45}
                     className="bg-secondary p-6 mb-4 min-h-60 flex items-center justify-center shadow-inner pixel-corners compliment-bg"
                   >
                     <Motion.div
-                      className={`text-lg text-main font-pixel-heading leading-relaxed`}
+                      className="text-lg text-main font-pixel-heading leading-relaxed"
+                      style={{
+                        whiteSpace: "pre-wrap",
+                        wordBreak: "break-word",
+                        overflow: "visible",
+                      }}
                       animate={
                         isAnimating
                           ? { scale: [1, 1.02, 1], opacity: [1, 0.95, 1] }
@@ -142,7 +145,6 @@ function MainContent() {
                     </Motion.div>
                   </Pop>
 
-                  {/* Player Controls */}
                   <div className="flex justify-center items-center space-x-4">
                     <button className="bg-div hover:opacity-80 border-2 border-main px-3 py-1 rounded text-secondary flex items-center justify-center">
                       <FiSkipBack />
@@ -161,7 +163,6 @@ function MainContent() {
                 </Pop>
               </div>
 
-              {/* Generate Button */}
               <div className="custom-hover text-center">
                 <Pop delay={0.45} className="inline-block">
                   <button
@@ -178,7 +179,6 @@ function MainContent() {
               </div>
             </div>
 
-            {/* Scrollbar */}
             <div className="w-8 bg-secondary border-l-2 border-main flex flex-col p-1 ">
               <div className="bg-tertiary hover:opacity-80 border-2 border-main rounded-sm flex-none h-5 flex items-center justify-center cursor-pointer text-xs text-primary font-pixel-paragraph">
                 <FiChevronUp className="thick-svg" />
@@ -192,7 +192,6 @@ function MainContent() {
             </div>
           </div>
 
-          {/* Footer */}
           <div className="bg-div border-t-2 border-main px-3 py-2 flex justify-end">
             <div className="w-6 h-6 bg-secondary border border-main rounded flex items-center justify-center">
               <div className="w-3 h-3 bg-div rounded"></div>
