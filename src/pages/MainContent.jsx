@@ -11,7 +11,10 @@ import {
   FiChevronDown,
 } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import complimentHeadingBg from "../assets/images/compliment-heading-bg2.svg?url";
+const complimentHeadingBg = new URL(
+  "../assets/images/compliment-heading-bg2.svg",
+  import.meta.url
+).href;
 import Stars from "../components/Stars.jsx";
 import Pop from "../components/Pop.jsx";
 import "../css/App.css";
